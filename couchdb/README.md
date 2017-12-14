@@ -20,6 +20,8 @@ WARNING:
 -	[`1.7.1`, `1.7`, `1` (*1.7.1/Dockerfile*)](https://github.com/apache/couchdb-docker/blob/029760550b8af66f49bf439ddbabfbd040e9727c/1.7.1/Dockerfile)
 -	[`1.7.1-couchperuser`, `1.7-couchperuser`, `1-couchperuser` (*1.7.1-couchperuser/Dockerfile*)](https://github.com/apache/couchdb-docker/blob/029760550b8af66f49bf439ddbabfbd040e9727c/1.7.1-couchperuser/Dockerfile)
 
+[![Build Status](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/couchdb/badge/icon) (`amd64/couchdb` build job)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/couchdb/)
+
 # Quick reference
 
 -	**Where to get help**:  
@@ -63,7 +65,7 @@ CouchDB comes with a suite of features, such as on-the-fly document transformati
 ### Start a CouchDB instance
 
 ```console
-$ docker run -d --name my-couchdb couchdb
+$ docker run -d --name my-couchdb amd64/couchdb
 ```
 
 This image includes `EXPOSE 5984` (the CouchDB port), so standard container linking will make it automatically available to the linked containers.
@@ -73,7 +75,7 @@ This image includes `EXPOSE 5984` (the CouchDB port), so standard container link
 In order to use the running instance from an application, link the container
 
 ```console
-$ docker run --name my-couchdb-app --link my-couchdb:couch couchdb
+$ docker run --name my-couchdb-app --link my-couchdb:couch amd64/couchdb
 ```
 
 See the [official docs](http://docs.couchdb.org/en/1.6.1/) for infomation on using and configuring CouchDB.
@@ -83,7 +85,7 @@ See the [official docs](http://docs.couchdb.org/en/1.6.1/) for infomation on usi
 If you want to expose the port to the outside world, run
 
 ```console
-$ docker run -p 5984:5984 -d couchdb
+$ docker run -p 5984:5984 -d amd64/couchdb
 ```
 
 CouchDB listens on port 5984 for requests and the image includes `EXPOSE 5984`. The flag `-p 5984:5984` exposes this port on the host.
@@ -102,7 +104,7 @@ CouchDB uses `/usr/local/var/lib/couchdb` to store its data. This directory is m
 You can map the container's volumes to a directory on the host, so that the data is kept between runs of the container. This example uses your current directory, but that is in general not the correct place to store your persistent data!
 
 ```console
-$ docker run -d -v $(pwd):/usr/local/var/lib/couchdb --name my-couchdb couchdb
+$ docker run -d -v $(pwd):/usr/local/var/lib/couchdb --name my-couchdb amd64/couchdb
 ```
 
 ## Specifying the admin user in the environment
@@ -110,7 +112,7 @@ $ docker run -d -v $(pwd):/usr/local/var/lib/couchdb --name my-couchdb couchdb
 You can use the two environment variables `COUCHDB_USER` and `COUCHDB_PASSWORD` to set up the admin user.
 
 ```console
-$ docker run -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -d couchdb
+$ docker run -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -d amd64/couchdb
 ```
 
 ## Using your own CouchDB configuration file
@@ -120,7 +122,7 @@ The CouchDB configuration is specified in `.ini` files in `/usr/local/etc/couchd
 If you want to use a customized CouchDB configuration, you can create your configuration file in a directory on the host machine and then mount that directory as `/usr/local/etc/couchdb/local.d` inside the `couchdb` container.
 
 ```console
-$ docker run --name my-couchdb -v /my/custom-config-dir:/usr/local/etc/couchdb/local.d -d couchdb
+$ docker run --name my-couchdb -v /my/custom-config-dir:/usr/local/etc/couchdb/local.d -d amd64/couchdb
 ```
 
 You can also use `couchdb` as the base image for your own couchdb instance and provie your own version of the `local.ini` config file:
@@ -128,7 +130,7 @@ You can also use `couchdb` as the base image for your own couchdb instance and p
 Example Dockerfile:
 
 ```dockerfile
-FROM couchdb
+FROM amd64/couchdb
 
 COPY local.ini /usr/local/etc/couchdb/
 ```

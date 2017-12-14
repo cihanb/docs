@@ -21,6 +21,8 @@ WARNING:
 -	[`1.4`, `1.4.2`, `latest` (*influxdb/1.4/Dockerfile*)](https://github.com/influxdata/influxdata-docker/blob/cd2681315705459a3bfc1bf52b5dd0f92ee78b86/influxdb/1.4/Dockerfile)
 -	[`1.4-alpine`, `1.4.2-alpine`, `alpine` (*influxdb/1.4/alpine/Dockerfile*)](https://github.com/influxdata/influxdata-docker/blob/cd2681315705459a3bfc1bf52b5dd0f92ee78b86/influxdb/1.4/alpine/Dockerfile)
 
+[![Build Status](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/influxdb/badge/icon) (`amd64/influxdb` build job)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/influxdb/)
+
 # Quick reference
 
 -	**Where to get help**:  
@@ -66,7 +68,7 @@ The InfluxDB image exposes a shared volume under `/var/lib/influxdb`, so you can
 ```console
 $ docker run -p 8086:8086 \
       -v $PWD:/var/lib/influxdb \
-      influxdb
+      amd64/influxdb
 ```
 
 Modify `$PWD` to the directory where you want to store data associated with the InfluxDB container.
@@ -76,7 +78,7 @@ You can also have Docker control the volume mountpoint by using a named volume.
 ```console
 $ docker run -p 8086:8086 \
       -v influxdb:/var/lib/influxdb \
-      influxdb
+      amd64/influxdb
 ```
 
 ### Exposed Ports
@@ -102,7 +104,7 @@ InfluxDB can be either configured from a config file or using environment variab
 Generate the default configuration file:
 
 ```console
-$ docker run --rm influxdb influxd config > influxdb.conf
+$ docker run --rm amd64/influxdb influxd config > influxdb.conf
 ```
 
 Modify the default configuration, which will now be available under `$PWD`. Then start the InfluxDB container.
@@ -110,7 +112,7 @@ Modify the default configuration, which will now be available under `$PWD`. Then
 ```console
 $ docker run -p 8086:8086 \
       -v $PWD/influxdb.conf:/etc/influxdb/influxdb.conf:ro \
-      influxdb -config /etc/influxdb/influxdb.conf
+      amd64/influxdb -config /etc/influxdb/influxdb.conf
 ```
 
 Modify `$PWD` to the directory where you want to store the configuration file.
@@ -134,7 +136,7 @@ InfluxDB supports the Graphite line protocol, but the service and ports are not 
 ```console
 docker run -p 8086:8086 -p 2003:2003 \
     -e INFLUXDB_GRAPHITE_ENABLED=true \
-    influxdb
+    amd64/influxdb
 ```
 
 See the [README on GitHub](https://github.com/influxdata/influxdb/blob/master/services/graphite/README.md) for more detailed documentation to set up the Graphite service. In order to take advantage of graphite templates, you should use a configuration file by outputting a default configuration file using the steps above and modifying the `[[graphite]]` section.
@@ -146,7 +148,7 @@ The administrator interface is deprecated as of 1.1.0 and will be removed in 1.3
 ```console
 docker run -p 8086:8086 -p 8083:8083 \
     -e INFLUXDB_ADMIN_ENABLED=true \
-    influxdb
+    amd64/influxdb
 ```
 
 To use the administrator interface, both the HTTP API and the administrator interface API's must be forwarded to the same port.
@@ -172,13 +174,13 @@ Read more about this in the [official documentation](https://docs.influxdata.com
 Start the container:
 
 ```console
-$ docker run --name=influxdb -d -p 8086:8086 influxdb
+$ docker run --name=influxdb -d -p 8086:8086 amd64/influxdb
 ```
 
 Run the influx client in another container:
 
 ```console
-$ docker run --rm --link=influxdb -it influxdb influx -host influxdb
+$ docker run --rm --link=influxdb -it amd64/influxdb influx -host influxdb
 ```
 
 At the moment, you cannot use `docker exec` to run the influx client since `docker exec` will not properly allocate a TTY. This is due to a current bug in Docker that is detailed in [docker/docker#8755](https://github.com/docker/docker/issues/8755).
@@ -254,13 +256,13 @@ The above would create the database `db0`, create an admin user with the passwor
 
 # Image Variants
 
-The `influxdb` images come in many flavors, each designed for a specific use case.
+The `amd64/influxdb` images come in many flavors, each designed for a specific use case.
 
-## `influxdb:<version>`
+## `amd64/influxdb:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-## `influxdb:alpine`
+## `amd64/influxdb:alpine`
 
 This image is based on the popular [Alpine Linux project](http://alpinelinux.org), available in [the `alpine` official image](https://hub.docker.com/_/alpine). Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
 

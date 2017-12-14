@@ -19,6 +19,8 @@ WARNING:
 -	[`latest`, `6.7`, `lts` (*6.7/Dockerfile*)](https://github.com/SonarSource/docker-sonarqube/blob/4ea09231a5a1ce4af97dd62c9c9bf30588324f57/6.7/Dockerfile)
 -	[`alpine`, `6.7-alpine`, `lts-alpine` (*6.7-alpine/Dockerfile*)](https://github.com/SonarSource/docker-sonarqube/blob/4ea09231a5a1ce4af97dd62c9c9bf30588324f57/6.7-alpine/Dockerfile)
 
+[![Build Status](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/sonarqube/badge/icon) (`amd64/sonarqube` build job)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/sonarqube/)
+
 # Quick reference
 
 -	**Where to get help**:  
@@ -62,7 +64,7 @@ SonarQube is an open source platform for continuous inspection of code quality.
 The server is started this way:
 
 ```console
-$ docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+$ docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 amd64/sonarqube
 ```
 
 To analyse a project:
@@ -98,13 +100,13 @@ The administration guide can be found [here](http://docs.sonarqube.org/display/S
 
 # Image Variants
 
-The `sonarqube` images come in many flavors, each designed for a specific use case.
+The `amd64/sonarqube` images come in many flavors, each designed for a specific use case.
 
-## `sonarqube:<version>`
+## `amd64/sonarqube:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-## `sonarqube:alpine`
+## `amd64/sonarqube:alpine`
 
 This image is based on the popular [Alpine Linux project](http://alpinelinux.org), available in [the `alpine` official image](https://hub.docker.com/_/alpine). Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
 

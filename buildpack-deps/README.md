@@ -47,6 +47,8 @@ WARNING:
 -	[`zesty-scm` (*zesty/scm/Dockerfile*)](https://github.com/docker-library/buildpack-deps/blob/9aa327dcc582d5384affbc5a19672e3077489e97/zesty/scm/Dockerfile)
 -	[`zesty` (*zesty/Dockerfile*)](https://github.com/docker-library/buildpack-deps/blob/d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1/zesty/Dockerfile)
 
+[![Build Status](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/buildpack-deps/badge/icon) (`amd64/buildpack-deps` build job)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/buildpack-deps/)
+
 # Quick reference
 
 -	**Where to get help**:  
