@@ -18,20 +18,16 @@ WARNING:
 
 -	[`4.9.1-php5.6-apache`, `4.9-php5.6-apache`, `4-php5.6-apache`, `php5.6-apache`, `4.9.1-php5.6`, `4.9-php5.6`, `4-php5.6`, `php5.6` (*php5.6/apache/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php5.6/apache/Dockerfile)
 -	[`4.9.1-php5.6-fpm`, `4.9-php5.6-fpm`, `4-php5.6-fpm`, `php5.6-fpm` (*php5.6/fpm/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php5.6/fpm/Dockerfile)
--	[`4.9.1-php5.6-fpm-alpine`, `4.9-php5.6-fpm-alpine`, `4-php5.6-fpm-alpine`, `php5.6-fpm-alpine` (*php5.6/fpm-alpine/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php5.6/fpm-alpine/Dockerfile)
 -	[`4.9.1-php7.0-apache`, `4.9-php7.0-apache`, `4-php7.0-apache`, `php7.0-apache`, `4.9.1-php7.0`, `4.9-php7.0`, `4-php7.0`, `php7.0` (*php7.0/apache/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php7.0/apache/Dockerfile)
 -	[`4.9.1-php7.0-fpm`, `4.9-php7.0-fpm`, `4-php7.0-fpm`, `php7.0-fpm` (*php7.0/fpm/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php7.0/fpm/Dockerfile)
--	[`4.9.1-php7.0-fpm-alpine`, `4.9-php7.0-fpm-alpine`, `4-php7.0-fpm-alpine`, `php7.0-fpm-alpine` (*php7.0/fpm-alpine/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php7.0/fpm-alpine/Dockerfile)
 -	[`4.9.1-php7.1-apache`, `4.9-php7.1-apache`, `4-php7.1-apache`, `php7.1-apache`, `4.9.1-php7.1`, `4.9-php7.1`, `4-php7.1`, `php7.1` (*php7.1/apache/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php7.1/apache/Dockerfile)
 -	[`4.9.1-php7.1-fpm`, `4.9-php7.1-fpm`, `4-php7.1-fpm`, `php7.1-fpm` (*php7.1/fpm/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php7.1/fpm/Dockerfile)
--	[`4.9.1-php7.1-fpm-alpine`, `4.9-php7.1-fpm-alpine`, `4-php7.1-fpm-alpine`, `php7.1-fpm-alpine` (*php7.1/fpm-alpine/Dockerfile*)](https://github.com/docker-library/wordpress/blob/88b4aa3b5ec2a837e1ab9e0a67f73f699d2b84e4/php7.1/fpm-alpine/Dockerfile)
 -	[`4.9.1-apache`, `4.9-apache`, `4-apache`, `apache`, `4.9.1`, `4.9`, `4`, `latest`, `4.9.1-php7.2-apache`, `4.9-php7.2-apache`, `4-php7.2-apache`, `php7.2-apache`, `4.9.1-php7.2`, `4.9-php7.2`, `4-php7.2`, `php7.2` (*php7.2/apache/Dockerfile*)](https://github.com/docker-library/wordpress/blob/591388696848f29bfa627ab38f78678135096f15/php7.2/apache/Dockerfile)
 -	[`4.9.1-fpm`, `4.9-fpm`, `4-fpm`, `fpm`, `4.9.1-php7.2-fpm`, `4.9-php7.2-fpm`, `4-php7.2-fpm`, `php7.2-fpm` (*php7.2/fpm/Dockerfile*)](https://github.com/docker-library/wordpress/blob/591388696848f29bfa627ab38f78678135096f15/php7.2/fpm/Dockerfile)
 -	[`4.9.1-fpm-alpine`, `4.9-fpm-alpine`, `4-fpm-alpine`, `fpm-alpine`, `4.9.1-php7.2-fpm-alpine`, `4.9-php7.2-fpm-alpine`, `4-php7.2-fpm-alpine`, `php7.2-fpm-alpine` (*php7.2/fpm-alpine/Dockerfile*)](https://github.com/docker-library/wordpress/blob/591388696848f29bfa627ab38f78678135096f15/php7.2/fpm-alpine/Dockerfile)
--	[`cli-1.4.1-php5.6`, `cli-1.4-php5.6`, `cli-1-php5.6`, `cli-php5.6` (*php5.6/cli/Dockerfile*)](https://github.com/docker-library/wordpress/blob/1e6d4be06a13412e57d670283b6b1c03cb4698be/php5.6/cli/Dockerfile)
--	[`cli-1.4.1-php7.0`, `cli-1.4-php7.0`, `cli-1-php7.0`, `cli-php7.0` (*php7.0/cli/Dockerfile*)](https://github.com/docker-library/wordpress/blob/1e6d4be06a13412e57d670283b6b1c03cb4698be/php7.0/cli/Dockerfile)
--	[`cli-1.4.1-php7.1`, `cli-1.4-php7.1`, `cli-1-php7.1`, `cli-php7.1` (*php7.1/cli/Dockerfile*)](https://github.com/docker-library/wordpress/blob/1e6d4be06a13412e57d670283b6b1c03cb4698be/php7.1/cli/Dockerfile)
 -	[`cli-1.4.1`, `cli-1.4`, `cli-1`, `cli`, `cli-1.4.1-php7.2`, `cli-1.4-php7.2`, `cli-1-php7.2`, `cli-php7.2` (*php7.2/cli/Dockerfile*)](https://github.com/docker-library/wordpress/blob/1e6d4be06a13412e57d670283b6b1c03cb4698be/php7.2/cli/Dockerfile)
+
+[![Build Status](https://doi-janky.infosiftr.net/job/multiarch/job/i386/job/wordpress/badge/icon) (`i386/wordpress` build job)](https://doi-janky.infosiftr.net/job/multiarch/job/i386/job/wordpress/)
 
 # Quick reference
 
@@ -72,7 +68,7 @@ WordPress is a free and open source blogging tool and a content management syste
 # How to use this image
 
 ```console
-$ docker run --name some-wordpress --link some-mysql:mysql -d wordpress
+$ docker run --name some-wordpress --link some-mysql:mysql -d i386/wordpress
 ```
 
 The following environment variables are also honored for configuring your WordPress instance:
@@ -89,7 +85,7 @@ If the `WORDPRESS_DB_NAME` specified does not already exist on the given MySQL s
 If you'd like to be able to access the instance from the host without the container's IP, standard port mappings can be used:
 
 ```console
-$ docker run --name some-wordpress --link some-mysql:mysql -p 8080:80 -d wordpress
+$ docker run --name some-wordpress --link some-mysql:mysql -p 8080:80 -d i386/wordpress
 ```
 
 Then, access it via `http://localhost:8080` or `http://host-ip:8080` in a browser.
@@ -142,13 +138,13 @@ The following Docker Hub features can help with the task of keeping your depende
 
 # Image Variants
 
-The `wordpress` images come in many flavors, each designed for a specific use case.
+The `i386/wordpress` images come in many flavors, each designed for a specific use case.
 
-## `wordpress:<version>`
+## `i386/wordpress:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-## `wordpress:alpine`
+## `i386/wordpress:alpine`
 
 This image is based on the popular [Alpine Linux project](http://alpinelinux.org), available in [the `alpine` official image](https://hub.docker.com/_/alpine). Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
 
@@ -156,7 +152,7 @@ This variant is highly recommended when final image size being as small as possi
 
 To minimize image size, it's uncommon for additional related tools (such as `git` or `bash`) to be included in Alpine-based images. Using this image as a base, add the things you need in your own Dockerfile (see the [`alpine` image description](https://hub.docker.com/_/alpine/) for examples of how to install packages if you are unfamiliar).
 
-## `wordpress:cli`
+## `i386/wordpress:cli`
 
 This image variant does not contain WordPress itself, but instead contains [WP-CLI](https://wp-cli.org).
 
