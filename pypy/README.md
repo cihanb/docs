@@ -19,9 +19,8 @@ WARNING:
 -	[`2-5.9.0`, `2-5.9`, `2-5`, `2` (*2/Dockerfile*)](https://github.com/docker-library/pypy/blob/1959d8cab4eb9d7e6970298bc5a3ef8417ad4251/2/Dockerfile)
 -	[`2-5.9.0-slim`, `2-5.9-slim`, `2-5-slim`, `2-slim` (*2/slim/Dockerfile*)](https://github.com/docker-library/pypy/blob/1959d8cab4eb9d7e6970298bc5a3ef8417ad4251/2/slim/Dockerfile)
 -	[`2-5.9.0-onbuild`, `2-5.9-onbuild`, `2-5-onbuild`, `2-onbuild` (*2/onbuild/Dockerfile*)](https://github.com/docker-library/pypy/blob/b48e8489ab794a2bacfd396c2f8e1a5b06d6ae48/2/onbuild/Dockerfile)
--	[`3-5.9.0`, `3-5.9`, `3-5`, `3`, `latest` (*3/Dockerfile*)](https://github.com/docker-library/pypy/blob/1959d8cab4eb9d7e6970298bc5a3ef8417ad4251/3/Dockerfile)
--	[`3-5.9.0-slim`, `3-5.9-slim`, `3-5-slim`, `3-slim`, `slim` (*3/slim/Dockerfile*)](https://github.com/docker-library/pypy/blob/1959d8cab4eb9d7e6970298bc5a3ef8417ad4251/3/slim/Dockerfile)
--	[`3-5.9.0-onbuild`, `3-5.9-onbuild`, `3-5-onbuild`, `3-onbuild`, `onbuild` (*3/onbuild/Dockerfile*)](https://github.com/docker-library/pypy/blob/b48e8489ab794a2bacfd396c2f8e1a5b06d6ae48/3/onbuild/Dockerfile)
+
+[![Build Status](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/pypy/badge/icon) (`arm32v7/pypy` build job)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/pypy/)
 
 # Quick reference
 
@@ -66,14 +65,14 @@ PyPy started out as a Python interpreter written in the Python language itself. 
 ## Create a `Dockerfile` in your Python app project
 
 ```dockerfile
-FROM pypy:3-onbuild
+FROM arm32v7/pypy:3-onbuild
 CMD [ "pypy3", "./your-daemon-or-script.py" ]
 ```
 
 or (if you need to use PyPy 2):
 
 ```dockerfile
-FROM pypy:2-onbuild
+FROM arm32v7/pypy:2-onbuild
 CMD [ "pypy", "./your-daemon-or-script.py" ]
 ```
 
@@ -91,28 +90,28 @@ $ docker run -it --rm --name my-running-app my-python-app
 For many simple, single file projects, you may find it inconvenient to write a complete `Dockerfile`. In such cases, you can run a Python script by using the Python Docker image directly:
 
 ```console
-$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp pypy:3 pypy3 your-daemon-or-script.py
+$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp arm32v7/pypy:3 pypy3 your-daemon-or-script.py
 ```
 
 or (again, if you need to use Python 2):
 
 ```console
-$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp pypy:2 pypy your-daemon-or-script.py
+$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp arm32v7/pypy:2 pypy your-daemon-or-script.py
 ```
 
 # Image Variants
 
-The `pypy` images come in many flavors, each designed for a specific use case.
+The `arm32v7/pypy` images come in many flavors, each designed for a specific use case.
 
-## `pypy:<version>`
+## `arm32v7/pypy:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of. This tag is based off of [`buildpack-deps`](https://registry.hub.docker.com/_/buildpack-deps/). `buildpack-deps` is designed for the average user of docker who has many images on their system. It, by design, has a large number of extremely common Debian packages. This reduces the number of packages that images that derive from it need to install, thus reducing the overall size of all images on your system.
 
-## `pypy:slim`
+## `arm32v7/pypy:slim`
 
-This image does not contain the common packages contained in the default tag and only contains the minimal packages needed to run `pypy`. Unless you are working in an environment where *only* the `pypy` image will be deployed and you have space constraints, we highly recommend using the default image of this repository.
+This image does not contain the common packages contained in the default tag and only contains the minimal packages needed to run `arm32v7/pypy`. Unless you are working in an environment where *only* the `arm32v7/pypy` image will be deployed and you have space constraints, we highly recommend using the default image of this repository.
 
-## `pypy:onbuild`
+## `arm32v7/pypy:onbuild`
 
 The `ONBUILD` image variants are deprecated, and their usage is discouraged. For more details, see [docker-library/official-images#2076](https://github.com/docker-library/official-images/issues/2076).
 
