@@ -16,8 +16,9 @@ WARNING:
 
 # Supported tags and respective `Dockerfile` links
 
--	[`3.2.1-apache`, `3.2-apache`, `3-apache`, `apache`, `3.2.1`, `3.2`, `3`, `latest` (*apache/Dockerfile*)](https://github.com/piwik/docker-piwik/blob/baf563abb7b48d9cb852c37713080f3e979097c3/apache/Dockerfile)
--	[`3.2.1-fpm`, `3.2-fpm`, `3-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/piwik/docker-piwik/blob/baf563abb7b48d9cb852c37713080f3e979097c3/fpm/Dockerfile)
+**No supported tags found!**
+
+It is very likely that `piwik` does not support the currently selected architecture (`ppc64le`).
 
 # Quick reference
 
@@ -64,7 +65,7 @@ Piwik is the leading open-source analytics platform that gives you more than jus
 # How to use this image
 
 ```console
-$ docker run --name some-piwik --link some-mysql:db -d piwik
+$ docker run --name some-piwik --link some-mysql:db -d ppc64le/piwik
 ```
 
 Now you can get access to fpm running on port 9000 inside the container. If you want to access it from the Internets, we recommend using a reverse proxy in front. You can find more information on that on the [docker-compose](#docker-compose) section.
